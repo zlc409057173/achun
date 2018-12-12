@@ -39,12 +39,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			createXmlHttpRequest();
 			var uname = document.getElementById("uname").value;
 			var upass = document.getElementById("upass").value;
-			xmlHttpReq.open("GET", "ajaxprocess.jsp?uname="+uname+"&&upass="+upass, true);
+			xmlHttpReq.open("GET", "ajaxprocess.jsp?uname="+uname+"&upass="+upass, true);
 			xmlHttpReq.onreadystatechange=callback;
 			xmlHttpReq.send(null);
 		}
 		function sendMSGByPost(){
-		
+			createXmlHttpRequest();
+			var uname = document.getElementById("uname").value;
+			var upass = document.getElementById("upass").value;
+			xmlHttpReq.open("POST", "ajaxprocess.jsp", true);
+			xmlHttpReq.onreadystatechange=callback;
+			xmlHttpReq.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+			xmlHttpReq.send("uname="+uname+"&upass="+upass);
 		}
 		function callback(){
 			if(xmlHttpReq.readyState=="4"){
