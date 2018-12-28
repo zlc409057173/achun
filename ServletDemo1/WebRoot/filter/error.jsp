@@ -1,5 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,7 +9,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>首页</title>
+    <title>错误展示</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -19,15 +19,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<script type="text/javascript">
-		function jumpshow(){
-			location.href="process";
-		}
-	</script>
+
   </head>
   
   <body>
-  	<span>当前登录的是：${cookie.user.value}</span>
-    <input type="button" value="展示所有信息" onclick="jumpshow()"></input>
+    This is error JSP page. <br>
   </body>
 </html>

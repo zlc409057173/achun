@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'show.jsp' starting page</title>
+    <title>信息展示</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -32,6 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	当前登录的是：${cookie.user.value}
     <center>
     	<table style="border:2px solid #000;">
     		<caption>仿真信息</caption>

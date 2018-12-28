@@ -23,9 +23,7 @@ public class Log4JInitServlet extends HttpServlet{
             BasicConfigurator.configure();  
         } else {  
             String webAppPath = sc.getRealPath("/"); 
-            System.out.println(webAppPath);
             String log4jProp = webAppPath + log4jLocation;
-            System.out.println(log4jProp);
             File yoMamaYesThisSaysYoMama = new File(log4jProp);  
             if (yoMamaYesThisSaysYoMama.exists()) {  
                 System.out.println("使用: " + log4jProp+"初始化日志设置信息");  
