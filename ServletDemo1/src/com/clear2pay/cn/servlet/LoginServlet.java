@@ -17,6 +17,13 @@ public class LoginServlet extends HttpServlet{
 			throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String upass = request.getParameter("upass");
+		String localAddr = request.getLocalAddr();
+		int localPort = request.getLocalPort();
+		String remoteAddr = request.getRemoteAddr();
+		int remotePort = request.getRemotePort();
+		//存入数据库，显示页面，查看访问人的信息
+		log.info("登录人的IP : "+remoteAddr+" ,端口号 : "+remotePort);
+		log.info("本地的IP : "+localAddr+" ,端口号 : "+localPort);
 		if("zhangsan".equals(username)&&"123".equals(upass)){
 			log.info("登录成功！"+username);
 			Cookie cookie = new Cookie("user", username);

@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<span>当前登录的是：${cookie.user.value}</span>
+  	<span>当前登录的是：${cookie.user.value}</span><span>当前登录人数：${usercount}</span>
     <input type="button" value="展示所有信息" onclick="jumpshow()"></input>
   </body>
 </html>

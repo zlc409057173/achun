@@ -20,20 +20,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript">
 		function go(){
-			var no = document.getElementById("index").value;
+			var no = $("#index").val();
 			if(no=="" || isNaN(no)) no=1;
-			var size = document.getElementById("size").value;
+			var size =  $("#size").val();
 			if(size=="" || isNaN(size)) size=10;
 			location.href="process?pageNo="+no+"&&pageSize="+size;
+		}
+		function filtrate(){
+			var filtTxt = $("#filtVal").val();
+			if(filtTxt.length <= 0){
+				filtTxt = "null";
+			}
+			var jsonStr = "{\"filtVal\":"+filtTxt+",\"pageSize\":"+${pageSize }+"}";
+			console.info(jsonStr);
+			<%-- var u = eval("("+jsonStr+")"); 
+			var u1 = jsonStr.parseJSON();--%>
+			var u1 = JSON.parse(jsonStr);
+			<%-- location.href="fileUpload.jsp"; --%>
 		}
 	</script>
   </head>
   
   <body>
-  	当前登录的是：${cookie.user.value}
+  	当前登录的是：${cookie.user.value}<br/>
     <center>
+  	<input type="text" style="width: 150px;" placeholder="请输入你要查的目录" id="filtVal"/><button onclick="filtrate()">查询</button>
     	<table style="border:2px solid #000;">
     		<caption>仿真信息</caption>
     		<tr>

@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>错误展示</title>
+    <title>My JSP 'fileUpload.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,6 +23,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is error JSP page. <br>
+    <form action="upLoad" method="post" enctype="multipart/form-data">
+    	文件：<input type="file" id="file" name="file" />
+    		<input type="submit" value="上传">
+    </form>
   </body>
 </html>

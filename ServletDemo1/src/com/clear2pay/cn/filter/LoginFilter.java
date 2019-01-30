@@ -1,8 +1,6 @@
 package com.clear2pay.cn.filter;
 
 import java.io.IOException;
-import java.security.MessageDigest;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
